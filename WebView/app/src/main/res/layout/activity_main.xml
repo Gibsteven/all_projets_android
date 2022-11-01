@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="206dp"
+        android:layout_height="163dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        app:srcCompat="@drawable/view" />
+
+    <TextView
+        android:id="@+id/descript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="serif-monospace"
+        android:text="My Remove"
+        android:textColor="#2675B3"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:autofillHints="Url Address"
+        android:id="@+id/et_edit"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/descript"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#2675B3"
+        android:textAlignment="center"
+        android:textColor="#2675B3"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"/>
+
+    <Button
+        android:id="@+id/connect_btn"
+        android:shadowColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_edit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:width="200dp"
+        android:backgroundTint="@color/white"
+        android:text="connect"
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold"
+        android:textColor="#2675B3" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/by_steven"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp"
+        android:textColor="#2675B3"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/TextError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/connect_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:text=""
+        android:fontFamily="serif-monospace"
+        android:textColor="@color/black"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

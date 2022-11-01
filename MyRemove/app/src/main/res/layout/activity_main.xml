@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <TextView
+       android:id="@+id/title"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="My Remove"
+       android:textSize="20dp"
+       android:textStyle="bold"
+       android:fontFamily="serif-monospace"
+       android:layout_marginTop="230dp"
+       android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/et_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:hint="Enter number" />
+
+    <EditText
+        android:id="@+id/et_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_above="@+id/button"
+        android:layout_below="@+id/title"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="29dp"
+        android:layout_toEndOf="@+id/et_text"
+        android:hint="Enter number" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="commencer"
+        android:layout_below="@+id/et_text"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="90dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button"
+        android:text="TextView"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>
