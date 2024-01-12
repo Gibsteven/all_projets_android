@@ -13,28 +13,33 @@ import android.webkit.WebViewClient;
 public class Webview extends AppCompatActivity {
     private View decorView;
     private WebView webView;
+    String val;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_webview);
 
-        webView = (WebView) findViewById(R.id.webView);
+        // Initialize the WebView after setting the content view
+        webView = findViewById(R.id.webView);
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
 
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_webview);
         decorView = getWindow().getDecorView();
 
-        Bundle res = getIntent().getExtras();
-        String val= res.get("ref").toString();
-        webView.loadUrl(val);
-        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener()
-        {
+        // Get the data from the Intent
+        Intent intent = getIntent();
+        if (intent != null) {
+            val = intent.getStringExtra("ref");
+            if (val != null) {
+                webView.loadUrl(val);
+            }
+        }
+
+        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
             @Override
-            public void onSystemUiVisibilityChange(int visibility)
-            {
+            public void onSystemUiVisibilityChange(int visibility) {
                 if (visibility == 0)
                     decorView.setSystemUiVisibility(hideSystemBars());
             }
@@ -42,24 +47,21 @@ public class Webview extends AppCompatActivity {
     }
 
     @Override
-    public void onWindowFocusChanged (boolean hasFocus)
-    {
+    public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if (hasFocus)
-        {
+        if (hasFocus) {
             decorView.setSystemUiVisibility(hideSystemBars());
         }
     }
-    private class Callback extends WebViewClient
-    {
+
+    private class Callback extends WebViewClient {
         @Override
-        public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event)
-        {
+        public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
             return false;
         }
     }
-    private int hideSystemBars()
-    {
+
+    private int hideSystemBars() {
         return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -71,24 +73,18 @@ public class Webview extends AppCompatActivity {
     int counter = 0;
 
     @Override
-    public void onBackPressed()
-
-    {
+    public void onBackPressed() {
         counter++;
-        if(counter == 1)
-        {
-            Intent i =new Intent(getApplicationContext(),MainActivity.class);
+        if (counter == 1) {
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
-        }
-        else
-        {
+        } else {
             super.onBackPressed();
         }
     }
-    private void openActivity()
-    {
-        Intent intent = new Intent(this,MainActivity.class);
+
+    private void openActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
 }

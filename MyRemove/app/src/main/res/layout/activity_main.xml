@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".MainActivity">
 
    <TextView
@@ -11,35 +12,27 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:text="My Remove"
-       android:textSize="20dp"
+       android:textSize="25dp"
        android:textStyle="bold"
        android:fontFamily="serif-monospace"
-       android:layout_marginTop="230dp"
        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:id="@+id/et_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@+id/title"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        android:hint="Enter number" />
-
-    <EditText
-        android:id="@+id/et_text1"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_above="@+id/button"
-        android:layout_below="@+id/title"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="29dp"
-        android:layout_toEndOf="@+id/et_text"
-        android:hint="Enter number" />
+        android:maxLines="1"
+        android:inputType="textWebEditText"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rounded_edittext_background"
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"
+        android:fontFamily="serif-monospace"
+        android:hint="Enter le nom web ou IP adresse" />
 
     <Button
         android:id="@+id/button"

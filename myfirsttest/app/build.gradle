@@ -5,7 +5,7 @@ apply plugin:'org.greenrobot.greendao'
 
 android {
     namespace 'com.example.myfirsttest'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.myfirsttest"
