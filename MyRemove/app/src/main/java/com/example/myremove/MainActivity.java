@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et_text1 = (EditText) findViewById(R.id.et_text1);
         title = (TextView) findViewById(R.id.title);
         textView = (TextView) findViewById(R.id.textView);
         et_text = (EditText) findViewById(R.id.et_text);
@@ -43,32 +42,32 @@ public class MainActivity extends AppCompatActivity {
                 textView.setVisibility(View.INVISIBLE);
             }
         });
-            button.setOnClickListener(new View.OnClickListener() {
-            //
-            @Override
-            public void onClick(View view) {
+        //
+        button.setOnClickListener(view -> {
 
-                if(et_text.getText().toString().length() > 0 )
-                {
-                    int url = et_text.getInputType();
-                    int url1 = et_text1.getInputType();
-                    int i = url + url1;
-                    title.setText(i);
-
-                }
-                else
-                {
-                    textView.setText("Error, nothing word input");
-                    textView.setTextColor(Color.RED);
-                    textView.setVisibility(View.VISIBLE);
-                    Toast.makeText(MainActivity.this, "Error, nothing word input", Toast.LENGTH_LONG).show();
-                }
+            if(et_text.getText().toString().length() > 0 )
+            {
+                openWebview();
+            }
+            else
+            {
+                textView.setText("Error, nothing word input");
+                textView.setTextColor(Color.RED);
+                textView.setVisibility(View.VISIBLE);
+                Toast.makeText(MainActivity.this, "Error, nothing word input", Toast.LENGTH_LONG).show();
             }
         });
     }
    public void openWebview()
    {
-       Intent intent = new Intent(this,Webview.class);
+       // Créez une intention pour démarrer l'activité Webview
+       Intent intent = new Intent(this, Webview.class);
+
+       // Obtenez le texte de l'EditText et l'envoyez à l'activité suivante
+       String userInput = et_text.getText().toString();
+       intent.putExtra("ref", userInput);
+
+       // Démarrer l'activité Webview avec les données supplémentaires
        startActivity(intent);
    }
 }
